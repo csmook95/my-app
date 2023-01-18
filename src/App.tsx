@@ -1,8 +1,11 @@
-import React from 'react';
+import Counter from "./ts/01.counter";
+import Converter from "./ts/02.converter";
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <Counter></Counter>
+      <Converter></Converter>
     </div>
   );
 }
