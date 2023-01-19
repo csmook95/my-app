@@ -1,8 +1,30 @@
-import React from "react"
+import { useState } from "react"
 
-function Converter() {
-    const [time, setTime] = React.useState(0);
-    const [flip, setFlip] = React.useState(true);
+function Component() {
+    const [index, setIndex] = useState(0)
+    const fnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setIndex(parseFloat(event.target.value))
+    }
+
+    return (
+        <div>
+            <h1>Super Converter</h1>
+            <select
+                onChange={fnChange}>
+                <option value="0">Minutes & Hours</option>
+                <option value="1">Km & Miles</option>
+            </select>
+            <hr />
+            {index === 0
+                ? <MinutesToHours></MinutesToHours>
+                : <KmToMiles></KmToMiles>}
+        </div>
+    )
+}
+
+function MinutesToHours() {
+    const [time, setTime] = useState(0);
+    const [flip, setFlip] = useState(true);
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (Number.isNaN(event.target.value)
             || parseFloat(event.target.value) === 0) {
@@ -27,7 +49,6 @@ function Converter() {
 
     return (
         <div>
-            <h3>Super Converter</h3>
             <div>
                 <label htmlFor="minutes">Minutes</label>
                 <input
@@ -56,4 +77,10 @@ function Converter() {
     );
 }
 
-export default Converter
+function KmToMiles() {
+    return (
+        <div>hi</div>
+    )
+}
+
+export default Component

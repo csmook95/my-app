@@ -1,11 +1,9 @@
-import Counter from "./ts/01.counter";
-import Converter from "./ts/02.converter";
+import Component from "./ts/06.todo"
 
 function App() {
   return (
     <div>
-      <Counter></Counter>
-      <Converter></Converter>
+      <Component></Component>
     </div>
   );
 }
