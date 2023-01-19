@@ -1,4 +1,4 @@
-import Component from "./ts/06.todo"
+import Component from "./ts/08.moive/movies"
 
 function App() {
   return (
