@@ -24,7 +24,9 @@ function MovieItem({ id, medium_cover_image, title, genres, summary }: props) {
                         <li key={index}>{value}</li>
                     ))}
                 </ul>
-                <p>{summary}</p>
+                <p>{summary.length > 235
+                    ? `${summary.slice(0, 300)}...`
+                    : summary}</p>
             </div>
         </div>
     )
