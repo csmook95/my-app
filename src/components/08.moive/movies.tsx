@@ -58,8 +58,16 @@ function Component() {
             {loading
                 ? <h1>Loading...</h1>
                 : (<div>
-                    {movies.map((movie: Movie) =>
-                        <MovieItem key={movie.id} movie={movie}></MovieItem>)}
+                    {movies.map(({ id, medium_cover_image,
+                        title, genres, summary }: Movie) =>
+                        <MovieItem
+                            key={id}
+                            id={id}
+                            medium_cover_image={medium_cover_image}
+                            title={title}
+                            genres={genres}
+                            summary={summary}
+                        ></MovieItem>)}
                 </div>)}
         </div>
     )

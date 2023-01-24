@@ -1,11 +1,20 @@
-import Component from "./ts/08.moive/movies"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Detail from "./routes/Detail";
+import Home from "./routes/Home";
 
 function App() {
   return (
-    <div>
-      <Component></Component>
-    </div>
-  );
+    <Router>
+      <Switch>
+        <Route path="/movie/:id" >
+          <Detail></Detail>
+        </Route>
+        <Route path="/">
+          <Home></Home>
+        </Route>
+      </Switch>
+    </Router>
+  )
 }
 
 export default App;
